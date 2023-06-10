@@ -1,5 +1,6 @@
 package com.neo.myapplication.presentation.ui.main.record.view
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,6 +11,7 @@ import androidx.fragment.app.Fragment
 import com.neo.myapplication.R
 import com.neo.myapplication.databinding.FragmentRecordBinding
 import com.neo.myapplication.presentation.ui.main.record.adapter.RecordAdapter
+import com.neo.myapplication.presentation.ui.recorddetail.view.RecordDetailActivity
 
 class RecordFragment : Fragment() {
     private lateinit var binding : FragmentRecordBinding
@@ -38,7 +40,8 @@ class RecordFragment : Fragment() {
     }
 
     private fun onRecordClicked(positionIdx : Int) {
-        Toast.makeText(requireContext(), positionIdx.toString(), Toast.LENGTH_SHORT).show()
+        // TODO: 추후 기록 인덱스 보내기
+        startActivity(Intent(requireActivity(), RecordDetailActivity::class.java))
     }
 
 }
