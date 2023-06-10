@@ -42,6 +42,7 @@
         <activity android:name=".presentation.ui.main.view.MainActivity"/>
         <activity android:name=".presentation.ui.main.friends.view.FriendsDetailActivity"/>
         <activity android:name=".presentation.ui.recorddetail.view.RecordDetailActivity" />
+        <activity android:name=".presentation.ui.writerecord.view.WriteRecordActivity" />
     </application>
 
 </manifest>
