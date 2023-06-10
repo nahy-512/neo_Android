@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Neo_Android</string>
+
+    <!-- friend detail activity -->
+    <string name="friend_detail_save">저장</string>
+    <string name="friend_detail_minus">-</string>
+    <string name="friend_detail_plus">+</string>
 </resources>

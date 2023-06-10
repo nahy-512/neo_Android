@@ -6,6 +6,10 @@ plugins {
     id 'com.google.gms.google-services'
 }
 
+Properties properties = new Properties()
+properties.load(project.rootProject.file('local.properties').newDataInputStream())
+def kakaoApiKey = properties.getProperty('kakao_native_key')
+
 android {
     namespace 'com.neo.myapplication'
     compileSdk 33
@@ -17,7 +21,15 @@ android {
         versionCode 1
         versionName "1.0"
 
+        buildConfigField "String", "KAKAO_API_KEY", properties['kakao_api_key']
+        // manifest에서 쓸 수 있도록 지정
+        manifestPlaceholders = [KAKAO_API_KEY : kakaoApiKey]
+
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildFeatures {
+        buildConfig = true
     }
 
     buildTypes {
@@ -74,4 +86,7 @@ dependencies {
     implementation platform('com.google.firebase:firebase-bom:32.0.0')
     implementation 'com.google.firebase:firebase-analytics-ktx'
     implementation 'com.google.firebase:firebase-storage-ktx'
+
+    /** Kakao Login */
+    implementation 'com.kakao.sdk:v2-user:2.13.0'
 }
