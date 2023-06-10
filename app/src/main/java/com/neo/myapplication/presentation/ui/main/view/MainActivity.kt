@@ -1,7 +1,8 @@
-package com.neo.myapplication
+package com.neo.myapplication.presentation.ui.main.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.neo.myapplication.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
