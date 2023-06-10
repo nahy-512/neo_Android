@@ -28,8 +28,14 @@ class AlarmActivity : AppCompatActivity() {
         recyclerView.layoutManager = LinearLayoutManager(this)
 
         initAlarm()
+        onBackButton()
 
+    }
 
+    private fun onBackButton() {
+        binding.actAlarmIvBack.setOnClickListener {
+            startActivity(Intent(this, MainActivity::class.java))
+        }
     }
 
     private fun initAlarm() {

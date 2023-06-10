@@ -27,7 +27,7 @@ class HomeFragment: Fragment() {
     ): View? {
         binding = FragmentHomeBinding.inflate(inflater, container, false)
 
-        binding.btnAlarm.setOnClickListener {
+        binding.ivMainHomeAlarm.setOnClickListener {
             activity?.let {
                 val intent = Intent(it, AlarmActivity::class.java)
                 it.startActivity(intent)
