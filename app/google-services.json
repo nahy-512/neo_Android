@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "162686252427",
+    "project_id": "neo-hack-ef052",
+    "storage_bucket": "neo-hack-ef052.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:162686252427:android:8e4c087450fbb57123ab8e",
+        "android_client_info": {
+          "package_name": "com.neo.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "162686252427-6tds6imn3d687pqd2pe439ahuii3u4hj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.neo.myapplication",
+            "certificate_hash": "41342a194d7b2e339be97fc1ae8c1d68db4f826c"
+          }
+        },
+        {
+          "client_id": "162686252427-dvcpaclgo53ac8odiiu5a3hp07mili00.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBzfI_h4ZXyl4gbGxH_uEqejd2cPz-f_u4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "162686252427-dvcpaclgo53ac8odiiu5a3hp07mili00.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
