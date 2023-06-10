@@ -1,27 +1,38 @@
 package com.neo.myapplication.presentation.ui.recorddetail.adapter
 
+import android.content.Context
+import android.content.res.ColorStateList
 import android.text.Layout
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.neo.myapplication.R
 import com.neo.myapplication.databinding.ItemRecordDetailCommentLeftBinding
 import com.neo.myapplication.databinding.ItemRecordDetailCommentRightBinding
 
 class RecordDetailCommentAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+    private lateinit var context : Context
 
     inner class RecordDetailCommentLeftViewHolder(private val binding : ItemRecordDetailCommentLeftBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind() {
-
+            when(adapterPosition % 4) {
+                0 -> binding.itemFgRecordDetailCommentLeftLayoutNickname.setCardBackgroundColor(ColorStateList.valueOf(context.resources.getColor(R.color.main_blue, null)))
+                else -> binding.itemFgRecordDetailCommentLeftLayoutNickname.setCardBackgroundColor(ColorStateList.valueOf(context.resources.getColor(R.color.main_yellow, null)))
+            }
         }
     }
 
     inner class RecordDetailCommentRightViewHolder(private val binding : ItemRecordDetailCommentRightBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind() {
-
+            when(adapterPosition % 4) {
+                1 -> binding.itemFgRecordDetailCommentRightLayoutNickname.setCardBackgroundColor(ColorStateList.valueOf(context.resources.getColor(R.color.main_red, null)))
+                else -> binding.itemFgRecordDetailCommentRightLayoutNickname.setCardBackgroundColor(ColorStateList.valueOf(context.resources.getColor(R.color.main_green, null)))
+            }
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
+        context = parent.context
         return when(viewType) {
             0 -> RecordDetailCommentLeftViewHolder(ItemRecordDetailCommentLeftBinding.inflate(
                 LayoutInflater.from(parent.context), parent, false))

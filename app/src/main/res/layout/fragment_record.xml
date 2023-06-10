@@ -29,6 +29,8 @@
                 android:layout_marginHorizontal="15dp"
                 android:paddingVertical="5dp"
                 android:background="@android:color/transparent"
+                android:hint="글 내용으로 검색하기"
+                android:textSize="@dimen/text_14"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -62,8 +64,8 @@
             tools:listitem="@layout/item_fg_record_rv_records"/>
 
         <com.google.android.material.card.MaterialCardView
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             app:cardElevation="1dp"
             app:cardCornerRadius="100000dp"
             android:onClick="@{() -> fragment.onPressFab()}"
@@ -77,8 +79,8 @@
                 android:background="@drawable/bg_record_fab" >
 
                 <ImageView
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
                     android:src="@drawable/ic_plus"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent"

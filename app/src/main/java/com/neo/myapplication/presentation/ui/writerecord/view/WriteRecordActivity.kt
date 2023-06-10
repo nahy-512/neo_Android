@@ -1,6 +1,9 @@
 package com.neo.myapplication.presentation.ui.writerecord.view
 
+import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
@@ -21,7 +24,25 @@ class WriteRecordActivity : AppCompatActivity() {
 
     private fun initBinding() {
         // TODO: 바인딩 추후 초기화
+        binding.lifecycleOwner = this
+        binding.activity = this
+        binding.viewModel = viewModel
     }
 
+    fun onOpenGallery() {
+        val intent = Intent()
+        intent.type = "image/*"
+        intent.action = Intent.ACTION_PICK
+        this.requestGalleryActivity.launch(intent)
+    }
 
+    private val requestGalleryActivity =
+        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
+            if (it.resultCode == Activity.RESULT_OK && it.data?.data != null) { //갤러리 캡쳐 결과값
+                val clipData = it?.data?.clipData
+                if (clipData == null) {
+                    it.data!!.data?.let { it1 -> viewModel.setImagePath(it1) }
+                }
+            }
+        }
 }
