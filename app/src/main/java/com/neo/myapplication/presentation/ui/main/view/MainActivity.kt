@@ -10,12 +10,16 @@ import com.neo.myapplication.presentation.ui.main.home.view.HomeFragment
 import com.neo.myapplication.presentation.ui.main.record.view.RecordFragment
 
 class MainActivity : AppCompatActivity() {
+
     private lateinit var binding : ActivityMainBinding
+    val manager = supportFragmentManager
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        showInit()
         initBottomNav()
     }
 
@@ -42,5 +46,11 @@ class MainActivity : AppCompatActivity() {
 
     private fun Fragment.changeFragment() {
         supportFragmentManager.beginTransaction().replace(R.id.main_layout_container, this).commit()
+    }
+
+    fun showInit() {
+        val transaction = manager.beginTransaction()
+            .add(R.id.main_layout_container, HomeFragment())
+        transaction.commit()
     }
 }
