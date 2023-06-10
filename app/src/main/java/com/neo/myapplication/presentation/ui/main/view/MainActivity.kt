@@ -5,13 +5,23 @@ import android.os.Bundle
 import android.widget.Toast
 import com.neo.myapplication.R
 import com.neo.myapplication.databinding.ActivityMainBinding
+import com.neo.myapplication.presentation.ui.main.home.HomeFragment
 
 class MainActivity : AppCompatActivity() {
+
+    private var homeFragment = HomeFragment()
+
     private lateinit var binding : ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        // 홈 Fragment 표시
+        val fm = supportFragmentManager
+        val fragmentTransaction = fm.beginTransaction()
+        fragmentTransaction.add(R.id.main_layout_container, HomeFragment())
+        fragmentTransaction.commit()
 
         initBottomNav()
     }
@@ -20,6 +30,7 @@ class MainActivity : AppCompatActivity() {
         binding.mainLayoutBottomNavigation.setOnItemSelectedListener {
             when(it.itemId) {
                 R.id.main_bottom_nav_home -> {
+
                     Toast.makeText(this, "Home", Toast.LENGTH_SHORT).show()
                 }// TODO: HomeFragment 이동
 
