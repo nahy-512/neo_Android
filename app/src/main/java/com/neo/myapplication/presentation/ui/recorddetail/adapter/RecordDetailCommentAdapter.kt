@@ -30,7 +30,7 @@ class RecordDetailCommentAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>
         }
     }
 
-    override fun getItemCount(): Int = 3 // TODO: 임시로 5개로 설정
+    override fun getItemCount(): Int = 10 // TODO: 임시로 5개로 설정
 
     override fun getItemViewType(position: Int): Int {
         return position % 2 // TODO: 홀/짝 구분하기 위함
