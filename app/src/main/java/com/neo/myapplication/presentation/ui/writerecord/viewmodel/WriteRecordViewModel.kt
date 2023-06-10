@@ -13,6 +13,9 @@ class WriteRecordViewModel : ViewModel() {
     private val _targetDate = MutableLiveData<MutableList<String>?>().apply { value = setTargetDate() as MutableList }
     val targetDate : LiveData<MutableList<String>?> = _targetDate
 
+    private val _location = MutableLiveData<String>().apply { value = "장소를 입력해주세요." }
+    val location : LiveData<String> = _location
+
 
     private val _imagePath = MutableLiveData<Any>()
     val imagePath : LiveData<Any> = _imagePath
@@ -23,5 +26,9 @@ class WriteRecordViewModel : ViewModel() {
 
     private fun setTargetDate() : List<String> {
         return SimpleDateFormat("yyyy.MM.dd", Locale.KOREA).format(Date(System.currentTimeMillis())).split('.')
+    }
+
+    fun setUserSelectedLocation(location : String) {
+        _location.value = location
     }
 }

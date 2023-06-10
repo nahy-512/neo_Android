@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name=".Neo_Android"
         android:allowBackup="true"
@@ -43,6 +45,7 @@
         <activity android:name=".presentation.ui.main.friends.view.FriendsDetailActivity"/>
         <activity android:name=".presentation.ui.recorddetail.view.RecordDetailActivity" />
         <activity android:name=".presentation.ui.writerecord.view.WriteRecordActivity" />
+        <activity android:name=".presentation.ui.location.view.SearchLocationActivity" />
 
         <activity
             android:name=".presentation.ui.alarm.view.AlarmActivity"
