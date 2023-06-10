@@ -17,6 +17,7 @@
         android:id="@+id/main_layout_bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="?actionBarSize"
+        app:itemRippleColor="@android:color/transparent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:menu="@menu/main_bottom_nav" />
 
