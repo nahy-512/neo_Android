@@ -2,8 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-
     <application
         android:name=".Neo_Android"
         android:allowBackup="true"
@@ -33,16 +31,34 @@
         <activity
             android:name=".presentation.ui.login.LoginActivity"
             android:exported="true">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
         <activity android:name=".presentation.ui.main.view.MainActivity"/>
         <activity android:name=".presentation.ui.main.friends.view.FriendsDetailActivity"/>
         <activity android:name=".presentation.ui.recorddetail.view.RecordDetailActivity" />
         <activity android:name=".presentation.ui.writerecord.view.WriteRecordActivity" />
+
+        <activity
+            android:name=".presentation.ui.alarm.view.AlarmActivity"
+            android:exported="true">
+
+
+        </activity>
+
+        <activity
+            android:name=".presentation.ui.share.view.ShareActivity"
+            android:exported="true">
+
+
+
+        </activity>
     </application>
+
 
 </manifest>
