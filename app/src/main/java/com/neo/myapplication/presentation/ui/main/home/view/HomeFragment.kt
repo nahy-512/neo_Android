@@ -1,4 +1,4 @@
-package com.neo.myapplication.presentation.ui.main.home
+package com.neo.myapplication.presentation.ui.main.home.view
 
 import android.os.Bundle
 import android.view.LayoutInflater

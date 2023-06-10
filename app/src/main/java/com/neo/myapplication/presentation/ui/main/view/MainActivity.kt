@@ -6,6 +6,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.neo.myapplication.R
 import com.neo.myapplication.databinding.ActivityMainBinding
+import com.neo.myapplication.presentation.ui.main.home.view.HomeFragment
 import com.neo.myapplication.presentation.ui.main.record.view.RecordFragment
 
 class MainActivity : AppCompatActivity() {
@@ -22,7 +23,7 @@ class MainActivity : AppCompatActivity() {
         binding.mainLayoutBottomNavigation.setOnItemSelectedListener {
             when(it.itemId) {
                 R.id.main_bottom_nav_home -> {
-                    Toast.makeText(this, "Home", Toast.LENGTH_SHORT).show()
+                    HomeFragment().changeFragment()
                 }// TODO: HomeFragment 이동
 
                 R.id.main_bottom_nav_friends -> {
