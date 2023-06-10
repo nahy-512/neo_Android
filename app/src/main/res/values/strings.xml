@@ -5,4 +5,6 @@
     <string name="friend_detail_save">저장</string>
     <string name="friend_detail_minus">-</string>
     <string name="friend_detail_plus">+</string>
+
+    <string name="map_record_date">%s %s, %s</string>
 </resources>

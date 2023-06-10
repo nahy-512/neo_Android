@@ -1,6 +1,8 @@
 package com.neo.myapplication.presentation.di.module
 
 import com.chunbae.narchive.presentation.di.annotation.KakaoRetrofit
+import com.chunbae.narchive.presentation.di.annotation.moilRetrofit
+import com.neo.myapplication.data.remote.service.EventService
 import com.neo.myapplication.data.remote.service.LocationService
 import dagger.Module
 import dagger.Provides
@@ -16,4 +18,8 @@ class ServiceModule {
     @Provides
     @Singleton
     fun provideLocationService(@KakaoRetrofit retrofit: Retrofit): LocationService = retrofit.create(LocationService::class.java)
+
+    @Provides
+    @Singleton
+    fun provideEventService(@moilRetrofit retrofit: Retrofit): EventService = retrofit.create(EventService::class.java)
 }
