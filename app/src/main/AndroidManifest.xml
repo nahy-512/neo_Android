@@ -23,6 +23,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".presentation.ui.main.friends.view.FriendsDetailActivity"/>
+        <activity android:name=".presentation.ui.recorddetail.view.RecordDetailActivity" />
     </application>
 
 </manifest>
