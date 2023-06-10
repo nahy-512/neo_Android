@@ -8,14 +8,24 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.neo.myapplication.R
 import com.neo.myapplication.databinding.FragmentFriendsBinding
 import com.neo.myapplication.presentation.ui.main.friends.adapter.FriendAdapter
+import java.util.ArrayList
+import java.util.Arrays
 
 class FriendsFragment : Fragment() {
     private lateinit var binding: FragmentFriendsBinding
+
+    // adding values to arrayList
+    private val imageList : ArrayList<Int> = arrayListOf(
+        R.drawable.test_plant2, R.drawable.ic_check, R.drawable.test_plant2, R.drawable.test_plant2, R.drawable.test_plant2,
+        R.drawable.test_plant2, R.drawable.test_plant2, R.drawable.test_plant2)
+
     private val friendAdapter by lazy {
-        FriendAdapter(::onFriendClicked)
+        FriendAdapter(::onFriendClicked, imageList)
     }
 
     override fun onCreateView(
@@ -36,11 +46,12 @@ class FriendsFragment : Fragment() {
     }
 
     private fun initFriend() {
-        binding.fgFriendsRvContent.adapter = friendAdapter
+        val rv = binding.fgFriendsRvContent
+        rv.adapter = friendAdapter
+        rv.layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
     }
 
     private fun onFriendClicked(positionIdx : Int) {
         startActivity(Intent(requireActivity(), FriendsDetailActivity::class.java))
-        Toast.makeText(requireContext(), positionIdx.toString(), Toast.LENGTH_SHORT).show()
     }
 }

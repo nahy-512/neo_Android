@@ -8,63 +8,76 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/main_yellow">
+        
+        <ImageView
+            android:id="@+id/fg_friend_detail_iv_back"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_back"
+            android:layout_marginTop="28dp"
+            android:layout_marginStart="4dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
 
-        <androidx.core.widget.NestedScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+        <ImageView
+            android:id="@+id/fg_friend_detail_iv_plant"
+            android:layout_width="195dp"
+            android:layout_height="330dp"
+            android:src="@drawable/test_plant2"
+            android:scaleType="centerCrop"
+            app:layout_constraintTop_toTopOf="@id/fg_friend_detail_iv_back"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/ac_friend_detail_ll_bottom">
+            app:layout_constraintEnd_toEndOf="parent"/>
 
-            <androidx.constraintlayout.widget.ConstraintLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginHorizontal="4dp"
+            android:layout_marginBottom="-30dp"
+            android:paddingHorizontal="16dp"
+            android:paddingTop="30dp"
+            android:background="@drawable/bg_friend_detail_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fg_friend_detail_iv_plant"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <TextView
+                android:id="@+id/av_friend_detail_tv_friend_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="44sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/pretendard_bold"
+                android:text="다니엘"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <TextView
+                android:id="@+id/av_friend_detail_tv_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="24sp"
+                android:textColor="@color/black"
+                app:layout_constraintTop_toTopOf="@id/av_friend_detail_tv_friend_name"
+                app:layout_constraintBottom_toBottomOf="@id/av_friend_detail_tv_friend_name"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:text="D+47"/>
+
+            <TextView
+                android:id="@+id/av_friend_detail_tv_content"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="50dp"
-                android:layout_marginHorizontal="4dp">
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:text="다니엘과 만난 지 365일이 지났어요!\n오늘 한 번 연락해볼까요?\n작년에 가디언즈 오브 갤럭시 2를 봤네요!\n이번에 개봉한 가디언즈 오브 갤럭시3을 보는 건 어떤가요?"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/av_friend_detail_tv_friend_name" />
 
-                <ImageView
-                    android:id="@+id/av_friend_detail_iv_plant"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    app:layout_constraintDimensionRatio="1:1.15"
-                    android:background="@drawable/ic_launcher_background"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"/>
-
-                <TextView
-                    android:id="@+id/av_friend_detail_tv_friend_name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="44sp"
-                    android:textColor="@color/black"
-                    android:text="Chella"
-                    app:layout_constraintTop_toBottomOf="@id/av_friend_detail_iv_plant"
-                    app:layout_constraintStart_toStartOf="@id/av_friend_detail_iv_plant" />
-
-                <TextView
-                    android:id="@+id/av_friend_detail_tv_date"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="24sp"
-                    android:textColor="@color/black"
-                    app:layout_constraintTop_toTopOf="@id/av_friend_detail_tv_friend_name"
-                    app:layout_constraintBottom_toBottomOf="@id/av_friend_detail_tv_friend_name"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    tools:text="D+47"/>
-
-                <TextView
-                    android:id="@+id/av_friend_detail_tv_content"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="16sp"
-                    android:textColor="@color/black"
-                    android:text="이 친구를 만나지 않은지 97일이 지났네요. 한번 만나봐요. 이 친구를 만나지 않은지 97일이 지났네요. 한번 만나봐요. "
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/av_friend_detail_tv_friend_name" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-        </androidx.core.widget.NestedScrollView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <LinearLayout
             android:id="@+id/ac_friend_detail_ll_bottom"
@@ -80,33 +93,33 @@
             <ImageView
                 android:id="@+id/av_friend_detail_iv_minus"
                 android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:text="@string/friend_detail_minus"
-                style="@style/friend_detail_btn"/>
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_friend_btn_minus"/>
 
             <TextView
                 android:id="@+id/av_friend_detail_tv_period"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_marginHorizontal="16dp"
-                android:text="60"
+                android:gravity="center_vertical"
+                android:text="180"
                 android:textSize="24sp"
                 android:textColor="@color/black"/>
 
             <ImageView
                 android:id="@+id/av_friend_detail_iv_plus"
                 android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:text="@string/friend_detail_plus"
-                style="@style/friend_detail_btn"/>
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_friend_btn_plus"/>
 
-            <androidx.appcompat.widget.AppCompatButton
+            <ImageView
                 android:id="@+id/av_friend_detail_btn_save"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="48dp"
                 android:layout_marginStart="20dp"
-                android:text="@string/friend_detail_save"
-                style="@style/friend_detail_btn" />
+                android:padding="5dp"
+                android:src="@drawable/ic_check"
+                android:background="@drawable/bg_save_btn" />
         </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
