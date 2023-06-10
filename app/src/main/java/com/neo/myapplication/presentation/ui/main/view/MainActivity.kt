@@ -20,6 +20,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initBottomNav() {
+        binding.mainLayoutBottomNavigation.itemIconTintList = null
+
         binding.mainLayoutBottomNavigation.setOnItemSelectedListener {
             when(it.itemId) {
                 R.id.main_bottom_nav_home -> {
