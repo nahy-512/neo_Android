@@ -8,7 +8,9 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.neo.myapplication.R
+import com.neo.myapplication.data.remote.response.ResponseLocationData
 import com.neo.myapplication.databinding.ActivityWriteRecordBinding
+import com.neo.myapplication.presentation.ui.location.view.SearchLocationActivity
 import com.neo.myapplication.presentation.ui.writerecord.viewmodel.WriteRecordViewModel
 
 class WriteRecordActivity : AppCompatActivity() {
@@ -43,6 +45,18 @@ class WriteRecordActivity : AppCompatActivity() {
                 if (clipData == null) {
                     it.data!!.data?.let { it1 -> viewModel.setImagePath(it1) }
                 }
+            }
+        }
+
+    fun openLocationActivity() {
+        val intent = Intent(this, SearchLocationActivity::class.java)
+        this.requestLocationActivity.launch(intent)
+    }
+
+    private val requestLocationActivity =
+        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
+            if (it.resultCode == Activity.RESULT_OK) {
+                it.data?.extras?.getString("LocationName")?.let { it1 -> viewModel.setUserSelectedLocation(it1) }
             }
         }
 }

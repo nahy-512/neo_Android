@@ -8,7 +8,9 @@ import com.neo.myapplication.databinding.ActivityMainBinding
 import com.neo.myapplication.presentation.ui.main.friends.view.FriendsFragment
 import com.neo.myapplication.presentation.ui.main.home.view.HomeFragment
 import com.neo.myapplication.presentation.ui.main.record.view.RecordFragment
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     private lateinit var binding : ActivityMainBinding
     val manager = supportFragmentManager

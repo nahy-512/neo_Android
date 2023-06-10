@@ -3,4 +3,6 @@
 
     <!-- friend detail activity -->
     <string name="friend_detail_save">저장</string>
+
+    <string name="map_record_date">%s %s, %s</string>
 </resources>
