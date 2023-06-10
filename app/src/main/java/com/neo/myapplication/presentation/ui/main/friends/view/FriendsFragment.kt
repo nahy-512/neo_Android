@@ -1,5 +1,6 @@
 package com.neo.myapplication.presentation.ui.main.friends.view
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -31,7 +32,7 @@ class FriendsFragment : Fragment() {
     }
 
     private fun initBinding() {
-        // TODO: API 연결시 Binding 연결하기
+        //TODO: API 연결시 Binding 연결하기
     }
 
     private fun initFriend() {
@@ -39,6 +40,7 @@ class FriendsFragment : Fragment() {
     }
 
     private fun onFriendClicked(positionIdx : Int) {
+        startActivity(Intent(requireActivity(), FriendsDetailActivity::class.java))
         Toast.makeText(requireContext(), positionIdx.toString(), Toast.LENGTH_SHORT).show()
     }
 }
