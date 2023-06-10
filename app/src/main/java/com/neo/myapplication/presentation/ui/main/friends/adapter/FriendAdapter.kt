@@ -1,5 +1,6 @@
 package com.neo.myapplication.presentation.ui.main.friends.adapter
 
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -20,12 +21,27 @@ class FriendAdapter(private val onClick : (Int) -> Unit, private val imageList: 
                 defaultTextView.visibility = View.GONE
 
                 val params: ViewGroup.LayoutParams? = containerView.layoutParams
-                //params?.width = width
                 params?.height = params?.width
-
                 containerView.layoutParams = params
-                //imageView.layoutParams?.height = imageView.layoutParams?.width
-                //binding.itemFgFriendsRvListIvImages.maxHeight = binding.itemFgFriendsRvListIvImages.width
+
+                val color: String
+
+                when(position % 4) {
+                    0,1 -> { // 색이 있는
+                        color = when (position % 6) {
+                            1 -> "#FF6058" // main_red
+                            4 -> "#138ADC" // main_blue
+                            5 -> "#06ECA6" // main_green
+                            else -> {
+                                "#FFEC08" // main_yellow
+                            }
+                        }
+                    } else -> {
+                        color = "#FFFFFF"
+                        //binding.itemFgFriendsRvListIvImages.visibility = View.GONE
+                    }
+                }
+                binding.itemFgFriendsRvListCv.setCardBackgroundColor(Color.parseColor(color))
             }
             binding.itemFgFriendsRvListIvImages.setImageResource(item)
         }

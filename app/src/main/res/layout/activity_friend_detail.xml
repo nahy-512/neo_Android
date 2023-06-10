@@ -73,6 +73,7 @@
                 android:layout_marginTop="16dp"
                 android:textSize="16sp"
                 android:textColor="@color/black"
+                android:fontFamily="@font/pretendard_semibold"
                 android:text="다니엘과 만난 지 365일이 지났어요!\n오늘 한 번 연락해볼까요?\n작년에 가디언즈 오브 갤럭시 2를 봤네요!\n이번에 개봉한 가디언즈 오브 갤럭시3을 보는 건 어떤가요?"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/av_friend_detail_tv_friend_name" />
