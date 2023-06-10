@@ -3,8 +3,10 @@ package com.neo.myapplication.presentation.ui.main.view
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import com.neo.myapplication.R
 import com.neo.myapplication.databinding.ActivityMainBinding
+import com.neo.myapplication.presentation.ui.main.record.view.RecordFragment
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding : ActivityMainBinding
@@ -28,12 +30,16 @@ class MainActivity : AppCompatActivity() {
                 }// TODO: FriendsFragment 이동
 
                 R.id.main_bottom_nav_record -> {
-                    Toast.makeText(this, "Record", Toast.LENGTH_SHORT).show()
+                    RecordFragment().changeFragment()
                 }// TODO: RecordFragment 이동
             }
             return@setOnItemSelectedListener true
         }
 
         binding.mainLayoutBottomNavigation.setOnItemReselectedListener {  } // 바텀네비 재클릭시 화면 재생성 방지
+    }
+
+    private fun Fragment.changeFragment() {
+        supportFragmentManager.beginTransaction().replace(R.id.main_layout_container, this).commit()
     }
 }
