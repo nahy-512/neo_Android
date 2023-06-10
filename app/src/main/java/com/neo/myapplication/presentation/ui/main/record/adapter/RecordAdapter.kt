@@ -8,7 +8,6 @@ import com.neo.myapplication.databinding.ItemFgRecordRvRecordsBinding
 
 class RecordAdapter(private val onClick : (Int) -> Unit) : RecyclerView.Adapter<RecordAdapter.RecordViewHolder>() {
     var recordList = mutableListOf<ResponseEventListData.ResponseEventListResult>()
-    // TODO: 데이터 목록 넣기
     inner class RecordViewHolder(private val binding: ItemFgRecordRvRecordsBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(item : ResponseEventListData.ResponseEventListResult) {
             binding.data = item

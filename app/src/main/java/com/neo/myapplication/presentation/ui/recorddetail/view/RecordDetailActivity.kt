@@ -6,7 +6,9 @@ import androidx.databinding.DataBindingUtil
 import com.neo.myapplication.R
 import com.neo.myapplication.databinding.ActivityRecordDetailBinding
 import com.neo.myapplication.presentation.ui.recorddetail.adapter.RecordDetailCommentAdapter
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class RecordDetailActivity : AppCompatActivity() {
     private lateinit var binding : ActivityRecordDetailBinding
     private val recordDetailCommentAdapter by lazy {
