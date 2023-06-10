@@ -6,6 +6,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.neo.myapplication.R
 import com.neo.myapplication.databinding.ActivityMainBinding
+import com.neo.myapplication.presentation.ui.main.friends.view.FriendsFragment
 import com.neo.myapplication.presentation.ui.main.record.view.RecordFragment
 
 class MainActivity : AppCompatActivity() {
@@ -26,7 +27,7 @@ class MainActivity : AppCompatActivity() {
                 }// TODO: HomeFragment 이동
 
                 R.id.main_bottom_nav_friends -> {
-                    Toast.makeText(this, "Friends", Toast.LENGTH_SHORT).show()
+                    FriendsFragment().changeFragment()
                 }// TODO: FriendsFragment 이동
 
                 R.id.main_bottom_nav_record -> {
