@@ -12,6 +12,7 @@ import com.neo.myapplication.R
 import com.neo.myapplication.databinding.FragmentRecordBinding
 import com.neo.myapplication.presentation.ui.main.record.adapter.RecordAdapter
 import com.neo.myapplication.presentation.ui.recorddetail.view.RecordDetailActivity
+import com.neo.myapplication.presentation.ui.writerecord.view.WriteRecordActivity
 
 class RecordFragment : Fragment() {
     private lateinit var binding : FragmentRecordBinding
@@ -32,6 +33,7 @@ class RecordFragment : Fragment() {
     }
 
     private fun initBinding() {
+        binding.fragment = this
         // TODO: API 연결시 Binding 연결하기
     }
 
@@ -42,6 +44,10 @@ class RecordFragment : Fragment() {
     private fun onRecordClicked(positionIdx : Int) {
         // TODO: 추후 기록 인덱스 보내기
         startActivity(Intent(requireActivity(), RecordDetailActivity::class.java))
+    }
+
+    fun onPressFab() {
+        startActivity(Intent(requireActivity(), WriteRecordActivity::class.java))
     }
 
 }
