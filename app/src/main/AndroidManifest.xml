@@ -36,7 +36,8 @@
             android:theme="@style/LoginTheme"
             android:exported="true">
         </activity>
-        <activity android:name=".presentation.ui.main.view.MainActivity"/>
+        <activity android:name=".presentation.ui.main.view.MainActivity"
+            android:exported="true"/>
         <activity android:name=".presentation.ui.main.friends.view.FriendsDetailActivity"/>
         <activity android:name=".presentation.ui.recorddetail.view.RecordDetailActivity" />
         <activity android:name=".presentation.ui.writerecord.view.WriteRecordActivity" />

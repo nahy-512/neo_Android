@@ -23,13 +23,14 @@
 
         <ImageView
             android:id="@+id/fg_friend_detail_iv_plant"
-            android:layout_width="195dp"
-            android:layout_height="330dp"
-            android:src="@drawable/test_plant2"
-            android:scaleType="centerCrop"
+            android:layout_width="250dp"
+            android:layout_height="300dp"
+            android:layout_marginStart="50dp"
+            tools:src="@drawable/ic_plant2_l"
+            android:scaleType="fitEnd"
             app:layout_constraintTop_toTopOf="@id/fg_friend_detail_iv_back"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintStart_toStartOf="parent"/>
+/>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -45,7 +46,7 @@
             app:layout_constraintBottom_toBottomOf="parent">
 
             <TextView
-                android:id="@+id/av_friend_detail_tv_friend_name"
+                android:id="@+id/fg_friend_detail_tv_friend_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="44sp"
@@ -56,32 +57,32 @@
                 app:layout_constraintStart_toStartOf="parent"/>
 
             <TextView
-                android:id="@+id/av_friend_detail_tv_date"
+                android:id="@+id/fg_friend_detail_tv_date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="24sp"
                 android:textColor="@color/black"
-                app:layout_constraintTop_toTopOf="@id/av_friend_detail_tv_friend_name"
-                app:layout_constraintBottom_toBottomOf="@id/av_friend_detail_tv_friend_name"
+                app:layout_constraintTop_toTopOf="@id/fg_friend_detail_tv_friend_name"
+                app:layout_constraintBottom_toBottomOf="@id/fg_friend_detail_tv_friend_name"
                 app:layout_constraintEnd_toEndOf="parent"
                 tools:text="D+47"/>
 
             <TextView
-                android:id="@+id/av_friend_detail_tv_content"
+                android:id="@+id/fg_friend_detail_tv_content"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:textSize="16sp"
                 android:textColor="@color/black"
                 android:fontFamily="@font/pretendard_semibold"
-                android:text="다니엘과 만난 지 365일이 지났어요!\n오늘 한 번 연락해볼까요?\n작년에 가디언즈 오브 갤럭시 2를 봤네요!\n이번에 개봉한 가디언즈 오브 갤럭시3을 보는 건 어떤가요?"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/av_friend_detail_tv_friend_name" />
+                app:layout_constraintTop_toBottomOf="@id/fg_friend_detail_tv_friend_name"
+                tools:text="다니엘과 만난 지 365일이 지났어요!\n오늘 한 번 연락해볼까요?\n작년에 가디언즈 오브 갤럭시 2를 봤네요!\n이번에 개봉한 가디언즈 오브 갤럭시3을 보는 건 어떤가요?"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <LinearLayout
-            android:id="@+id/ac_friend_detail_ll_bottom"
+            android:id="@+id/fg_friend_detail_ll_bottom"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -92,13 +93,13 @@
             app:layout_constraintBottom_toBottomOf="parent">
 
             <ImageView
-                android:id="@+id/av_friend_detail_iv_minus"
+                android:id="@+id/fg_friend_detail_iv_minus"
                 android:layout_width="40dp"
                 android:layout_height="match_parent"
                 android:src="@drawable/ic_friend_btn_minus"/>
 
             <TextView
-                android:id="@+id/av_friend_detail_tv_period"
+                android:id="@+id/fg_friend_detail_tv_count"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginHorizontal="16dp"
@@ -108,13 +109,13 @@
                 android:textColor="@color/black"/>
 
             <ImageView
-                android:id="@+id/av_friend_detail_iv_plus"
+                android:id="@+id/fg_friend_detail_iv_plus"
                 android:layout_width="40dp"
                 android:layout_height="match_parent"
                 android:src="@drawable/ic_friend_btn_plus"/>
 
             <ImageView
-                android:id="@+id/av_friend_detail_btn_save"
+                android:id="@+id/fg_friend_detail_btn_save"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_marginStart="20dp"

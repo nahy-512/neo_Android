@@ -2,6 +2,7 @@ package com.neo.myapplication.presentation.ui.main.friends.view
 
 import android.content.Intent
 import android.os.Bundle
+import android.provider.ContactsContract.CommonDataKinds.Nickname
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -20,12 +21,13 @@ class FriendsFragment : Fragment() {
     private lateinit var binding: FragmentFriendsBinding
 
     // adding values to arrayList
-    private val imageList : ArrayList<Int> = arrayListOf(
-        R.drawable.test_plant2, R.drawable.ic_check, R.drawable.test_plant2, R.drawable.test_plant2, R.drawable.test_plant2,
-        R.drawable.test_plant2, R.drawable.test_plant2, R.drawable.test_plant2)
+    private val nicknameList : ArrayList<String> = arrayListOf(
+        "첼라", "나이아카", "주씨", "춘배", "코코아", "푸", "다니엘", "헤이즐", "에릭", "아크"
+    )
+
 
     private val friendAdapter by lazy {
-        FriendAdapter(::onFriendClicked, imageList)
+        FriendAdapter(::onFriendClicked, nicknameList)
     }
 
     override fun onCreateView(
@@ -49,9 +51,24 @@ class FriendsFragment : Fragment() {
         val rv = binding.fgFriendsRvContent
         rv.adapter = friendAdapter
         rv.layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
+
+        // itemClick
+        friendAdapter.setMyItemClickListener(object : FriendAdapter.MyItemClickListener {
+            override fun onItemClick(nickname: String, plant: Int) {
+                val intent = Intent(activity, FriendsDetailActivity::class.java)
+
+                // 데이터 넣기
+                intent.apply {
+                    this.putExtra("nickname", nickname)
+                    this.putExtra("image", plant)
+                }
+                // 화면 이동
+                startActivity(intent, Bundle())
+            }
+        })
     }
 
     private fun onFriendClicked(positionIdx : Int) {
-        startActivity(Intent(requireActivity(), FriendsDetailActivity::class.java))
+        //startActivity(Intent(requireActivity(), FriendsDetailActivity::class.java))
     }
 }
