@@ -5,6 +5,7 @@ import com.chunbae.narchive.presentation.di.annotation.moilRetrofit
 import com.neo.myapplication.data.remote.service.EventService
 import com.neo.myapplication.data.remote.service.LocationService
 import com.neo.myapplication.data.remote.service.ReviewService
+import com.neo.myapplication.data.remote.service.UserService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -27,4 +28,8 @@ class ServiceModule {
     @Provides
     @Singleton
     fun provideReviewService(@moilRetrofit retrofit: Retrofit): ReviewService = retrofit.create(ReviewService::class.java)
+
+    @Provides
+    @Singleton
+    fun provideUserService(@moilRetrofit retrofit: Retrofit): UserService = retrofit.create(UserService::class.java)
 }

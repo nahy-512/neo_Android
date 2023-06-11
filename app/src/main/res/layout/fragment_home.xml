@@ -94,21 +94,23 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginTop="12dp"
-            app:layout_constraintTop_toBottomOf="@+id/home_my_state">
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:paddingHorizontal="4dp"
+            app:layout_constraintTop_toBottomOf="@+id/home_my_state"
+            app:layout_constraintStart_toStartOf="@id/home_my_state"
+            app:layout_constraintEnd_toEndOf="@id/home_my_state">
 
             <ImageView
                 android:id="@+id/iv_main_home_alarm"
                 android:layout_width="match_parent"
                 android:layout_height="196dp"
-                android:layout_marginHorizontal="15dp"
                 android:scaleType="fitXY"
                 android:src="@drawable/img_main_home_alram_button"
                 android:text="알림"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:layout_editor_absoluteX="0dp" />
+                />
 
             <TextView
                 android:id="@+id/tv_main_home_alarm_coment"

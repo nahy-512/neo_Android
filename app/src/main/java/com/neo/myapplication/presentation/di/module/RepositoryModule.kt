@@ -3,9 +3,11 @@ package com.neo.myapplication.presentation.di.module
 import com.neo.myapplication.data.remote.repository.EventRepositoryImpl
 import com.neo.myapplication.data.remote.repository.LocationRepositoryImpl
 import com.neo.myapplication.data.remote.repository.ReviewRepositoryImpl
+import com.neo.myapplication.data.remote.repository.UserRepositoryImpl
 import com.neo.myapplication.domain.repository.EventRepository
 import com.neo.myapplication.domain.repository.LocationRepository
 import com.neo.myapplication.domain.repository.ReviewRepository
+import com.neo.myapplication.domain.repository.UserRepository
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -23,4 +25,9 @@ abstract class RepositoryModule {
 
     @Binds
     abstract fun bindReviewRepository(reviewRepositoryImpl: ReviewRepositoryImpl) : ReviewRepository
+
+    @Binds
+    abstract fun bindUserRepository(userRepositoryImpl: UserRepositoryImpl) : UserRepository
+
+
 }
