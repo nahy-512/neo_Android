@@ -11,7 +11,7 @@ class RecordAdapter(private val onClick : (Int) -> Unit) : RecyclerView.Adapter<
     inner class RecordViewHolder(private val binding: ItemFgRecordRvRecordsBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(item : ResponseEventListData.ResponseEventListResult) {
             binding.data = item
-            binding.root.setOnClickListener { onClick.invoke(0) }
+            binding.root.setOnClickListener { onClick.invoke(item.event_idx) }
         }
     }
 

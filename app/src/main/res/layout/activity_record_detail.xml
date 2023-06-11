@@ -3,6 +3,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+        <variable
+            name="recordData"
+            type="com.neo.myapplication.data.data.RecordData" />
+
+        <variable
+            name="activity"
+            type="com.neo.myapplication.presentation.ui.recorddetail.view.RecordDetailActivity" />
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -22,6 +32,15 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="@{() -> activity.onSaveClicked()}"
+                android:src="@drawable/ic_save_review_comment"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -50,7 +69,7 @@
                     android:textColor="@color/black"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    android:text="2023.06.10"
+                    android:text="@{recordData.eventDate}"
                     tools:text="2023.06.10" />
 
                 <View
@@ -79,7 +98,7 @@
                     android:layout_width="0dp"
                     android:layout_height="0dp"
                     android:layout_marginTop="23dp"
-                    android:src="@drawable/test1"
+                    setImage="@{recordData.eventImg}"
                     android:scaleType="centerCrop"
                     app:layout_constraintDimensionRatio="1:1.4"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -108,7 +127,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/fg_record_detail_iv_image"
                     app:layout_constraintWidth_percent="0.7"
-                    android:text="gpt 생성 내용gpt 생성 내용gpt 생성 내용gpt 생성 내용gpt 생성 내용gpt 생성 내용gpt 생성 내용gpt 생성 내용gpt 생성 내용gpt 생성 내용gpt 생성 내용gpt 생성 내용내용gpt 생" />
+                    android:text="@{recordData.result}" />
 
                 <View
                     android:layout_width="0dp"

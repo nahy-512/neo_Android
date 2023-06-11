@@ -3,6 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+        <variable
+            name="reviewData"
+            type="com.neo.myapplication.data.remote.response.ResponseReviewListData.ResponseReviewListResult" />
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -25,7 +31,7 @@
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
                 android:layout_gravity="center"
-                tools:text="닉네임" />
+                tools:text="@{reviewData.nickname}" />
 
         </com.google.android.material.card.MaterialCardView>
 
@@ -49,6 +55,7 @@
                 android:layout_marginHorizontal="10dp"
                 android:maxLength="20"
                 android:maxLines="2"
+                android:text="@{reviewData.review}"
                 android:hint="일정에 대한 한마디를 남겨주세요!"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
