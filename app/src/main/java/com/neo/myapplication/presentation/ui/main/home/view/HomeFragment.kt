@@ -6,14 +6,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import com.neo.myapplication.R
 import com.neo.myapplication.databinding.FragmentHomeBinding
 import com.neo.myapplication.presentation.ui.alarm.view.AlarmActivity
+import com.neo.myapplication.presentation.ui.main.viewmodel.MainViewModel
 
 class HomeFragment: Fragment() {
 
     private lateinit var binding : FragmentHomeBinding
-
+    private val viewModel : MainViewModel by activityViewModels()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -37,4 +39,12 @@ class HomeFragment: Fragment() {
         return binding.root
     }
 
+    /*
+    private fun initBinding() {
+        binding.viewModel = viewModel
+    }
+
+    private fun initHomeData() {
+        viewModel.getUserData()
+    } */
 }
