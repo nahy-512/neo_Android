@@ -4,6 +4,7 @@ import com.chunbae.narchive.presentation.di.annotation.KakaoRetrofit
 import com.chunbae.narchive.presentation.di.annotation.moilRetrofit
 import com.neo.myapplication.data.remote.service.EventService
 import com.neo.myapplication.data.remote.service.LocationService
+import com.neo.myapplication.data.remote.service.ReviewService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -22,4 +23,8 @@ class ServiceModule {
     @Provides
     @Singleton
     fun provideEventService(@moilRetrofit retrofit: Retrofit): EventService = retrofit.create(EventService::class.java)
+
+    @Provides
+    @Singleton
+    fun provideReviewService(@moilRetrofit retrofit: Retrofit): ReviewService = retrofit.create(ReviewService::class.java)
 }

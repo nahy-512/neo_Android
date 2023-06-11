@@ -55,14 +55,14 @@ class RecordFragment : Fragment() {
 
     private fun observeRecord() {
         viewModel.eventList.observe(viewLifecycleOwner) {
-            Log.d("----", "observeRecord: $it")
             recordAdapter.recordList = it
             recordAdapter.notifyDataSetChanged()
         }
     }
     private fun onRecordClicked(positionIdx : Int) {
-        // TODO: 추후 기록 인덱스 보내기
-        startActivity(Intent(requireActivity(), RecordDetailActivity::class.java))
+        val intent = Intent(requireContext(), RecordDetailActivity::class.java)
+        intent.putExtra("eventIdx", positionIdx)
+        startActivity(intent)
     }
 
     fun onPressFab() {
