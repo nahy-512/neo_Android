@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Neo_Android</string>
+    <string name="app_name">모일</string>
 
     <!-- friend detail activity -->
     <string name="friend_detail_save">저장</string>
